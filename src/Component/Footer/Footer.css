@@ -33,9 +33,8 @@
   .logo-and-contact {
     display: flex;
     flex-direction: row; /* Align items (logo and contact info) horizontally */
-    justify-content: flex-start;
-    width: 50%; /* Keep width as half of the footer */
-    align-items: center; /* Vertically center the logo and contact info */
+    align-items: center; /* Center align items */
+  width: 100%; /* Take full width */
   }
   
   .footer-logo {
@@ -45,8 +44,11 @@
   }
   
   .contact-info {
-    margin-left: 50px;
-    text-align: left; /* Ensures contact info is aligned to the left */
+    margin: 0 auto; /* Center the contact info */
+    text-align: center; /* Center the text */
+  }
+  .contact-info h1 {
+    font-size: 35px;
   }
   .contact-list {
     list-style: none;
@@ -65,54 +67,59 @@
     height: 20px;
     margin-right: 10px;
   }
-  
-  .subscribe {
-    flex: 1;
-    text-align: center; /* Centers the content inside the subscribe section */
+
+  .social-media {
+    text-align: center;
+    margin-top: 20px;
   }
   
-  .subscribe h1 {
-    margin-bottom: 15px;
+  .social-media h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
   }
   
-  .subscribe span {
+  .social-media span {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 16px;
     display: block;
-    margin-bottom: 20px; /* Space between the text and input fields */
   }
   
-  .subscribe-inputs {
+  .social-icons {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Ensure responsiveness */
-    gap: 10px; /* Space between the inputs */
-    margin-bottom: 10px; /* Space below the input fields */
+    gap: 20px; /* Adjust the gap between icons as needed */
+    margin-top: 10px;
   }
   
-  .subscribe input {
-    padding: 10px;
-    width: 200px;
-    border: 1px solid white;
-    border-radius: 5px;
-    background-color:transparent;
-    color: white;
-  }
-  .subscribe ::placeholder {
-    color: white;
-  }
-  
-  .subscribe button {
-    background-color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px; /* Adds space between input fields and button */
-    width: 40%;
+  .social-icons a {
+    display: inline-block;
+    width: 40px;  /* Icon size */
+    height: 40px; /* Icon size */
+    background-color: #f1f1f1; /* Background color for the icons */
+    border-radius: 50%; /* Makes the background round */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
   
-  .subscribe button:hover {
-    background-color: #ff9f00;
+  .social-icons a:hover {
+    background-color: #007bff; /* Change this to the desired hover color */
+    transform: scale(1.1); /* Slightly scale up on hover */
   }
+  
+  .social-icons svg {
+    width: 20px; /* Adjust the size of the icons */
+    height: 20px;
+    fill: #333; /* Default icon color */
+    transition: fill 0.3s ease;
+  }
+  
+  .social-icons a:hover svg {
+    fill: #fff; /* Change icon color when hovered */
+  }
+  
   
   /* For responsiveness */
   @media (max-width: 768px) {
@@ -126,19 +133,14 @@
       text-align: center;
     }
   
-    .subscribe-inputs {
-      flex-direction: column;
-    }
-  
-    .subscribe input {
-      width: 100%; /* Full width on smaller screens */
-    }
-  
-    .subscribe button {
-      width: 100%; /* Full width on smaller screens */
-    }
+   
   }
-  
+
+
+
+     
+
+
   @media (max-width: 480px) {
     .footer-logo {
       max-width: 120px;

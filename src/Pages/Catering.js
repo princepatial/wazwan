@@ -29,53 +29,44 @@ const Catering = () => {
   return (
     <>
     <div className='four-buttons'>
-        <button>Wedding</button>
         <button>Corporate</button>
         <button>Party</button>
         <button>Event</button>
     </div>
-<div className="container1 mt-5">
-  <div className="section-one1">
-    <img src="https://wazwanksa.com/wp-content/uploads/2023/12/Wedding-Catering.png" alt="Kashmiri Wazwan"/>
-  </div>
-  <div className={`side-text1 ${scrollDown ? "moved" : ""}`}>
-    <h1><font>Wedding</font> Catering</h1>
-    <p>Wazwan taste of Kashmir would be more than happy to cater to your weddings and special ceremonies. For enquirers please <b>call us directly  on 0555127624.</b></p>
-    <button>Contact Now</button>
-  </div>
-</div>
+
 
 <div className="container-another1 mt-5">
-  <div className={`side-text1 ${scrollDown ? "move-right" : ""}`}>
+<div className="section-one1">
+    <img src="https://wazwanksa.com/wp-content/uploads/2023/12/corporate-catering.png" alt="Kashmiri Wazwan"/>
+  </div>
+  <div className={`side-text1 ${scrollDown ? "moved" : ""}`}>
     <h1><font>Corporate </font> Catering</h1>
     <p style={{marginTop:"25px"}}>We will be pleased to to cater our signature Kashmiri Wazwan or authentic Indian dishes at reasonable prices.</p>
     <button>Contact Now</button>
   </div>
-  <div className="section-one1">
-    <img src="https://wazwanksa.com/wp-content/uploads/2023/12/corporate-catering.png" alt="Kashmiri Wazwan"/>
-  </div>
+ 
 </div>
 
 
 <div className="container1 mt-5">
-  <div className="section-one1">
-    <img src="https://wazwanksa.com/wp-content/uploads/2023/12/party.png" alt="Kashmiri Wazwan"/>
-  </div>
-  <div className={`side-text1 ${scrollDown ? "moved" : ""}`}>
+  <div className={`side-text1 ${scrollDown ? "move-right" : ""}`}>
     <h1><font>Party</font> Catering</h1>
     <p>We are all set to spice up your parties with Kashmiri Wazwan and authentic Indian delicacies. We can serve buffets or family style menus. For further details and discussions please get in touch .</p>
     <button>Contact Now</button>
   </div>
+  <div className="section-one1">
+    <img src="https://wazwanksa.com/wp-content/uploads/2023/12/party.png" alt="Kashmiri Wazwan"/>
+  </div>
 </div>
 
 <div className="container-another1 mt-5">
-  <div className={`side-text1 ${scrollDown ? "move-right" : ""}`}>
+<div className="section-one1">
+    <img src="https://wazwanksa.com/wp-content/uploads/2023/12/event.png" alt="Kashmiri Wazwan"/>
+  </div>
+  <div className={`side-text1 ${scrollDown ? "moved" : ""}`}>
     <h1><font>Event </font> Catering</h1>
     <p>Embark on a culinary journey that transcends borders as we invite you to experience the soulful allure of Kashmiri Wazwan, right here in the heart of Saudi Arab.</p>
     <button>Contact Now</button>
-  </div>
-  <div className="section-one1">
-    <img src="https://wazwanksa.com/wp-content/uploads/2023/12/event.png" alt="Kashmiri Wazwan"/>
   </div>
 </div>
 

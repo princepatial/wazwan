@@ -22,16 +22,17 @@
 
 .image-container {
     position: relative;
-    display: inline-block; /* Centering the container */
+    display: block; /* Centering the container */
     max-height: 250px; /* Set maximum height for the image */
     overflow: hidden; /* Hide overflow */
-    max-width: 100%;
+    width: 75%; /* Set to full width */
+    margin: 0 auto 20px;
 }
 
 .image-container img {
     width: 100%; /* Make the image responsive */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 8px;
+    border-radius: 10px;
     opacity: 0.8; /* Set opacity for the image */
 }
 
@@ -45,6 +46,10 @@
     display: flex;
     justify-content: center; /* Center text horizontally */
     align-items: center; /* Center text vertically */
+}
+
+.food-menu a {
+  text-decoration: none;
 }
 
 .image-container h2 {
@@ -142,20 +147,20 @@
 
 
   .image-container1 {
-    display: flex; /* Use flexbox for centering */
-    justify-content: center;
-    align-items: center;
     position: relative;
-    max-height: 250px; /* Set maximum height for the image */
-    overflow: hidden; /* Hide overflow */
-    max-width: 60%;
-    margin: 0 auto;
+    display: block;
+    max-height: 250px;
+    overflow: hidden;
+    width: 75%;
+    margin: 0 auto 20px;
+
+   
 }
 
 .image-container1 img {
     width: 100%; /* Make the image responsive */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 8px;
+    border-radius: 10px;
     opacity: 0.8; /* Set opacity for the image */
 }
 

@@ -61,7 +61,7 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    height: 70vh; /* Decreased the height of the background image */
+    height: 80vh; /* Decreased the height of the background image */
     width: 100%;
     display: flex;
     justify-content: center;

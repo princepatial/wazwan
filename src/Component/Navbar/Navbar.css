@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
 body {
     background-color: #f5f5f5; /* Light gray background to keep it soft */
     color: #333; /* Default text color for readability */
@@ -14,6 +16,7 @@ body {
   min-height: 100vh; /* Ensures it covers the viewport */
   width: 100%;
   transition: background-image 0.5s ease-in-out;
+  
 }
 
 .nav-smaller {
@@ -59,6 +62,10 @@ body {
 
 .navbar-small li:last-child {
   border-right: none; /* Remove border for the last item */
+}
+
+.text-move-up {
+  margin-top: -50px; /* Adjust the value to move the text further up or down */
 }
 
 .svg-icons {
@@ -139,40 +146,48 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #fff;
-    font-family: 'Amita', cursive;
-    font-size: 32px;
-    line-height: 1.5;
+   
     z-index: 1001;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+   
   }
   .text-over-img h1 {
     white-space: pre-line; /* This allows line breaks in the text */
-  }
-  .main-txt-lower {
-    position: absolute;
-    top: 60%; /* Adjust this value based on desired spacing from the main text */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    font-weight: bold;
     color: #fff;
-    font-size: 1.1rem;
-    line-height: 1.5;
+    font-family: 'Amita', cursive;
+    font-size: 50px;
+    line-height: 4rem;
+  }
+  
+  .main-txt-lower1 {
+    position: absolute;
+    top: 67%; /* Adjust this value based on desired spacing from the main text */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center vertically and horizontally */
+    text-align: center;
     z-index: 1000;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    white-space: nowrap; /* Prevent text from wrapping */
+    width: 80%; /* Set desired width */
+    max-width: 100%; /* Ensure it doesn't go beyond the screen */
     overflow: hidden; /* Hide overflow if the text is too long */
-    text-overflow: ellipsis;
   }
-  .main-txt-lower span {
-    max-width: 80%; /* Limit the width of the text */
-    display: inline-block; /* Allow the span to have a max-width */
+  
+  #subtext {
+    display: block; /* Allow the text to wrap */
+    font-size: 25px; /* Set desired font size */
+    color: #FFFFFF; /* Text color */
+    font-family: dosis, Sans-serif; /* Font family */
+    font-weight: 500; /* Font weight */
+    line-height: 1.5em; /* Line height */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow */
     white-space: normal; /* Allow text to wrap */
+    overflow-wrap: break-word; /* Allow long words to break onto the next line */
   }
+
 
   .btn-menu {
     position: absolute;
-    top: 70%; /* Adjust this value based on desired spacing from the lower text */
+    top: 79%; /* Adjust this value based on desired spacing from the lower text */
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
