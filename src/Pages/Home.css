@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap');
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+    padding-left: 13%;
+}
+
+/* Image styling */
+.section-one img {
+    max-width: 100%;
+    height: 380px;
+    /* Adjust this value to set the desired height */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Text styling */
+.side-text {
+    width: 450px;
+    max-width: 100%;
+    height: 320px;
+    margin-left: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add this line for box shadow */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    padding: 20px;
+    transition: transform 1.5s ease-in-out;
+    position: relative;
+    transform: translateX(0);
+}
+.moved {
+    transform: translateX(-100px); /* Adjust this value based on how far you want it to move */
+  }
+
+.side-text h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-family: "Amita", serif;
+    color: #333333;
+}
+
+.side-text h2 {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.side-text p {
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.side-text button {
+    background-color: #e58e26;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+    font-family: "Amita", serif;
+    width: 150px;
+}
+font {
+    color:#e58e26 ;
+}
+
+.side-text button:hover {
+    background-color: #d35400;
+}
+
+
+
+.container-another {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    padding-left: 17%;
+    gap: 50px;
+  }
+  
+
+  .image-collage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-column-gap: 40px;
+    grid-row-gap: 10px; 
+  }
+  
+  .image-collage img {
+    width: 120%;
+    height: 100%;
+    max-width: 200px; 
+    max-height: 170px;
+    object-fit: cover; 
+    border-radius: 10px;
+  }
+
+  .move-right {
+    transform: translateX(100px); /* Move right by 100px */
+  }
+
+
+  
+  .popular-items {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .popular-items h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-family: "Amita", serif;
+    font-weight: bold;
+  }
+  
+  .highlight  {
+    color: #FFA500;
+  }
+  
+  .popular-items > p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .menus-page1 {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  
+  .menu-item {
+    position: relative;
+  }
+  
+  .menu-item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(32, 27, 27, 0.5); 
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-family: "Amita", serif;
+ 
+  }
+  .menu-item-info:hover {
+    background: rgba(0, 0, 0, 0.7); /* Darker on hover for better readability */
+  }
+  
+  .menu-item-info h3 {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .menu-item-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+
+  }
+  
+  .nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .nav-button.prev {
+    left: 0;
+  }
+  
+  .nav-button.next {
+    right: 0;
+  }
+  
+  .btn-menu-order button {
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    font-family: "Amita", serif;
+  }
+  
+  .btn-menu-order button:hover {
+    background-color: #FF8C00;
+  }
+
+
+
+
+
+
+
+
+.online-delivery {
+    background-image: url('/public/images/home-section1.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 40vh; /* Decreased the height of the background image */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative; /* Added this to create a new stacking context */
+  }
+  
+  .online-delivery::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Added a light black overlay */
+    z-index: 1; /* Ensure the overlay is below the text */
+  }
+  
+  .text-place {
+    max-width: 800px;
+    padding: 2rem;
+    border-radius: 10px;
+    position: relative; /* Added this to ensure the text is on top of the overlay */
+    z-index: 2; /* Ensure the text is above the overlay */
+    font-family: "Amita", serif;
+  }
+  
+  .text-place h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .text-place h1 font {
+    color: #ffc107; /* Changed the color to match the image */
+  }
+  
+  .svg-clock {
+    width: 1.2rem; /* Adjusted the size of the clock icon */
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    fill:#e58e26;
+  }
+  
+  .text-place button {
+    background-color: transparent; /* Changed the button color to match the image */
+    color: white; /* Changed the button text color to white */
+    border: 1px solid white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-family: "Amita", serif;
+  }
+  .text-place button:hover {
+    background-color: #9da5ad; /* Darken the button color on hover */
+  }
+  
+  .text-place span {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+
+
+  .delivery-area-des {
+    text-align: center;
+    align-items: center;
+
+  }
+
+  .delivery-area-des h1 {
+    font-family: "Amita", serif;
+  }
+
+  .delivery-area-des  p {
+    font-size: 1.2rem;
+    flex-wrap: wrap;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  

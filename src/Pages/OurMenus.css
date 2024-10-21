@@ -1,0 +1,280 @@
+.breakfast-menu {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.menu-nav {
+    margin: 20px 0;
+}
+
+.menu-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-nav li {
+    display: inline;
+    margin: 0 15px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family:"Amita", serif ;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block; /* Centering the container */
+    max-height: 250px; /* Set maximum height for the image */
+    overflow: hidden; /* Hide overflow */
+    max-width: 100%;
+}
+
+.image-container img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    opacity: 0.8; /* Set opacity for the image */
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(32, 16, 16, 0.3); /* Lighter black background */
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+}
+
+.image-container h2 {
+     position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add text shadow for better visibility */
+    font-family:"Amita", serif ;
+    font-weight: bold;
+}
+
+
+
+
+ .food-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    max-width: 1000px; /* Decrease the overall width */
+    margin: 0 auto; /* Center the container */
+  
+  }
+  
+  .food-item {
+    background-color: #f2f2f2;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+   
+  }
+  
+  .food-image {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    border-radius: 10px;
+  }
+
+  .item-info {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    justify-content: space-between;
+    padding: 0 20px;
+    font-family:"Amita", serif ;
+  }
+  .food-item h3 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.1rem;
+    color: #333333;
+    font-weight: bold;
+
+  }
+  
+  .calories {
+    font-size: 14px; /* Adjust font size if needed */
+    color: #888; /* Keep the color for calories */
+    font-size: 0.9rem;
+    color: #333333;
+    
+  }
+
+
+  
+  #desc {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    text-align: justify;
+    color: #666;
+    padding: 0 20px;
+    font-family:"Amita", serif ;
+    color: #cc3366;
+  }
+  
+  
+  .price {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #f39c12;
+    padding: 0 20px;
+    font-family:"Amita", serif ;
+    color: #F99D11;
+    text-align: start;
+  }
+
+
+
+  
+
+
+
+  .image-container1 {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-height: 250px; /* Set maximum height for the image */
+    overflow: hidden; /* Hide overflow */
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.image-container1 img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    opacity: 0.8; /* Set opacity for the image */
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(32, 16, 16, 0.3); /* Lighter black background */
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+}
+
+.image-container1 h2 {
+     position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add text shadow for better visibility */
+    font-family:"Amita", serif ;
+    font-weight: bold;
+}
+
+
+
+.beverages-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    max-width: 1000px; /* Decrease the overall width */
+    margin: 0 auto; /* Center the container */
+  
+  }
+  
+  .food-item1 {
+    background-color: #f2f2f2;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+   
+  }
+  
+  .food-image1 {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    border-radius: 10px;
+  }
+
+  .item-info1 {
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    justify-content: space-between;
+    padding: 0 20px;
+    font-family:"Amita", serif ;
+  }
+  .food-item1 h3 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.1rem;
+    color: #333333;
+    font-weight: bold;
+
+  }
+
+
+
+  
+.starters-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    max-width: 1000px; /* Decrease the overall width */
+    margin: 0 auto; /* Center the container */
+  
+  }
+
+
+
+  
+.wazwan-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    max-width: 1000px; /* Decrease the overall width */
+    margin: 0 auto; /* Center the container */
+  
+  }
+
+  .indian-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    max-width: 1000px; /* Decrease the overall width */
+    margin: 0 auto; /* Center the container */
+  
+  }
+
+
+  .vegetrian-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    max-width: 1000px; /* Decrease the overall width */
+    margin: 0 auto; /* Center the container */
+  
+  }
+
+  .kids-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    max-width: 1000px; /* Decrease the overall width */
+    margin: 0 auto; /* Center the container */
+  
+  }
+

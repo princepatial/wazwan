@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&display=swap');
+
+.contact-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 40px 20px;
+    gap: 50px;
+    border-radius: 10px;
+    margin-right: 10%;
+}
+
+.contact-info1 {
+    position: relative;
+    width: 30%; /* Set a fixed width for the contact info section */
+    max-height: 450px; /* Optional: Limit max height for consistency */
+    margin-left: auto; /* Center the section horizontally */
+}
+
+.contact-info1 img {
+    width: 100%; /* Make the image fill the width of the parent */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 430px; /* Set a maximum height */
+    border-radius: 10px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.contact-info1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Match the image's width */
+    max-height: 450px; /* Match the image's max height */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Light black overlay with opacity */
+    border-radius: 10px;
+    z-index: 2; /* Overlay should be above the image */
+    pointer-events: none; /* Allow interactions to pass through */
+}
+
+.contact-details {
+    position: absolute;
+    top: 40%; /* Move text further down */
+    left: 5px;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 3;
+}
+
+.contact-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-details p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight:600;
+}
+
+/* Contact Form Styling */
+/* Contact Form Styling */
+.contact-form {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 30px; /* Keep or adjust based on preference */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 1.5s ease-in-out;
+    position: relative;
+    transform: translateX(0); 
+    max-width: 500px; /* Set the desired maximum width */
+    width: 100%; /* Make sure it's responsive */
+    margin: 0; /* Remove auto to prevent centering */
+    padding: 20px;
+    z-index: 3;
+    margin-top: 2.5%;
+}
+
+/* Adjust inline fields to ensure they stay organized */
+.inline-fields {
+    display: flex;
+    gap: 20px;
+}
+
+.inline-fields input {
+    flex: 1;
+    max-width: 100%; /* Adjust the width as needed */
+}
+
+.contact-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: "Amita", serif;
+    color: #333;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border: none;
+    border-bottom: 2px solid #000;
+    outline: none;
+    padding: 8px 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+.contact-form input[name="name"],
+.contact-form textarea {
+    width: 100%; /* Full width */
+    max-width: none; /* Override any previous max-width */
+}
+
+.contact-form button {
+    background-color: #e58e26;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    font-family: "Amita", serif;
+    width: 200px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-bottom: 2px solid #e58e26; /* Change color on focus */
+}
+
+font {
+    color: #e58e26;
+}
+
+.moved {
+    transform: translateX(-100px); /* Adjust this value based on how far you want it to move */
+  }

@@ -1,0 +1,152 @@
+.footer {
+    background-image: url('/public/images/footer-img.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 0;
+    font-family: 'Arial', sans-serif;
+    position: relative; 
+  }
+  .footer::before {
+    content: ''; /* Required to create a pseudo-element */
+    position: absolute; /* Position it absolutely to cover the footer */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fade black overlay */
+    z-index: 1; /* Ensure the overlay is below the text */
+}
+
+  
+  .footer-section {
+    display: flex;
+    justify-content: space-between; /* Spreads contact info and subscribe section */
+    align-items: flex-start;
+    padding: 0 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* Ensure text is above the overlay */
+    z-index: 2; /* Higher z-index than the overlay */
+}
+  
+  .logo-and-contact {
+    display: flex;
+    flex-direction: row; /* Align items (logo and contact info) horizontally */
+    justify-content: flex-start;
+    width: 50%; /* Keep width as half of the footer */
+    align-items: center; /* Vertically center the logo and contact info */
+  }
+  
+  .footer-logo {
+    max-width: 150px;
+    margin-right: 20px; /* Adds space between the logo and contact info */
+    border-radius: 50%;
+  }
+  
+  .contact-info {
+    margin-left: 50px;
+    text-align: left; /* Ensures contact info is aligned to the left */
+  }
+  .contact-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .contact-item svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .subscribe {
+    flex: 1;
+    text-align: center; /* Centers the content inside the subscribe section */
+  }
+  
+  .subscribe h1 {
+    margin-bottom: 15px;
+  }
+  
+  .subscribe span {
+    display: block;
+    margin-bottom: 20px; /* Space between the text and input fields */
+  }
+  
+  .subscribe-inputs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensure responsiveness */
+    gap: 10px; /* Space between the inputs */
+    margin-bottom: 10px; /* Space below the input fields */
+  }
+  
+  .subscribe input {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color:transparent;
+    color: white;
+  }
+  .subscribe ::placeholder {
+    color: white;
+  }
+  
+  .subscribe button {
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Adds space between input fields and button */
+    width: 40%;
+  }
+  
+  .subscribe button:hover {
+    background-color: #ff9f00;
+  }
+  
+  /* For responsiveness */
+  @media (max-width: 768px) {
+    .footer-section {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .logo-and-contact {
+      width: 100%; /* Take full width */
+      text-align: center;
+    }
+  
+    .subscribe-inputs {
+      flex-direction: column;
+    }
+  
+    .subscribe input {
+      width: 100%; /* Full width on smaller screens */
+    }
+  
+    .subscribe button {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-logo {
+      max-width: 120px;
+    }
+  
+    .contact-info h1,
+    .subscribe h1 {
+      font-size: 18px;
+    }
+  }
+  

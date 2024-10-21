@@ -1,0 +1,168 @@
+import React,{useState,useEffect,useCallback} from 'react'
+import './About.css'
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const popularItems = [
+  { id: 1, title: "Rice and breads", subtitle: "Chicken Biryani", image: "../images/four-collge2.png" },
+  { id: 2, title: "Kids Menu", subtitle: "Chicken Nuggets", image: "../images/fou-collage4.webp" },
+  { id: 3, title: "Breakfast", subtitle: "Harissa", image: "../images/four-collge2.png" },
+  { id: 4, title: "Kids Menu", subtitle: "Chicken Nuggets", image: "../images/fou-collage4.webp" },
+  { id: 5, title: "Beverages", subtitle: "Noon Chai Kashmiri", image: "../images/fou-collage4.webp" },
+  { id: 6, title: "Kids Menu", subtitle: "Chicken Nuggets", image: "../images/fou-collage4.webp" },
+  { id: 7, title: "Desserts", subtitle: "Phirni", image: "../images/four-collge2.png" },
+  { id: 8, title: "Appetizers", subtitle: "Kashmiri Kebabs", image: "./images/four-collge2.png" },
+  { id: 9, title: "Main Course", subtitle: "Rogan Josh", image: "../images/four-collge2.png" },
+  { id: 10, title: "Sides", subtitle: "Kashmiri Pulao", image: "../images/four-collge2.png" },
+];
+
+const About = ({autoSlideInterval = 5000 }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 4;
+  const gap = 20;
+
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % popularItems.length);
+  }, [popularItems.length]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + popularItems.length) % popularItems.length);
+  }, [popularItems.length]);
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, autoSlideInterval);
+    return () => clearInterval(interval);
+  }, [nextSlide, autoSlideInterval]);
+
+  // Create an array with additional items for seamless looping
+  const extendedItems = [
+    ...popularItems.slice(-itemsPerPage),
+    ...popularItems,
+    ...popularItems.slice(0, itemsPerPage)
+  ];
+
+
+
+  return (
+    <>
+    <div className="wazwan-container">
+      <div className="wazwan-header">
+        <h1>"Kashmiri Wazwan, Where Heritage Meets Culinary Art"</h1>
+        <p>
+          Welcome to WAZWAN where we bring the soulful allure of Kashmiri Wazwan to the heart of Saudi Arabia. Immerse yourself in a culinary journey that transcends borders, as we proudly present the authentic flavors of Kashmir right to your home.
+        </p>
+        <p>
+          Our passion for perfection and commitment to preserving the rich traditions of Kashmiri cuisine have garnered applause from every corner of Saudi Arabia. At WAZWAN, we don't just serve food; we craft experiences. From the vibrant Shallots (Fregnet elongated type of onion called Pran in Kashmir) to the meticulous preparation, each dish reflects the essence of Wazwan, leaving an indelible mark on the palates of those who seek true culinary delight.
+        </p>
+        <p>
+          Join us in celebrating the magic of Kashmiri Wazwan, where every meal is a testament to our dedication, and every customer is a cherished guest in our journey of flavors. Discover the unparalleled blend of tradition and taste that defines WAZWAN, your oasis of Kashmiri hospitality in the heart of Saudi Arabia.
+        </p>
+        <div className="wazwan-buttons">
+          <button className="contact-btn">Contact Us</button>
+          <button className="menu-btn">View Menu</button>
+        </div>
+      </div>
+    </div>
+
+
+
+<div className='online-delivery1 mt-5'> 
+
+<div className="popular-items1">
+        <h1>Our Popular <span className="highlight">Items</span></h1>
+        <p>"Wazwan's, each dish is a masterpiece, carrying the rich heritage of Kashmir"</p>
+
+        <div className="menus-page" style={{ position: 'relative', padding: '0 40px', overflow: 'hidden' }}>
+          <div style={{ 
+            display: 'flex', 
+            gap: `${gap}px`, // Add gap between items
+            transition: 'transform 0.5s ease-in-out',
+            transform: `translateX(calc(-${(currentIndex + itemsPerPage) * (100 / itemsPerPage)}% - ${currentIndex * gap}px))`,
+          }}>
+            {extendedItems.map((item, index) => (
+              <div key={`${item.id}-${index}`} className="menu-item" style={{ 
+                flex: `0 0 calc(${100 / itemsPerPage}% - ${gap * (itemsPerPage - 1) / itemsPerPage}px)` 
+              }}>
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  style={{ 
+                    width: '100%', 
+                    height: '300px', // Increased height
+                    objectFit: 'cover' 
+                  }} 
+                />
+                <div className="menu-item-info">
+                  <h3>{item.title}</h3>
+                  <p>{item.subtitle}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <button onClick={prevSlide} className="nav-button prev" aria-label="Previous item">
+            <ChevronLeft size={24} />
+          </button>
+          <button onClick={nextSlide} className="nav-button next" aria-label="Next item">
+            <ChevronRight size={24} />
+          </button>
+        </div>
+
+        <div className="btn-menu-order">
+          <button>View Menu</button>
+        </div>
+      </div>
+
+</div>
+
+
+
+<div className="kashmiri-wazwan mt-5">
+      <div className="header">
+        <h1>"Thank you very much for supporting us, we are open to meet you!"</h1>
+        <p>"We are proud to deliver you the finest Kashmiri WAZWAN using the freshest ingredients that Saudi Arabia has to offer and importing specific ingredients from Kashmir. This is a unique food experience serving the finest Kashmiri cuisine in your area."</p>
+      </div>
+      <div className="description">
+        <p>
+          From wedding celebrations to host important guests, the wazwan feast forms an integral part of family gatherings in Kashmir. And while it is an inextricable part of Kashmiri culture, the dishes' names and their bountiful, spice-rich sauces tell of a long history of Persian, Arabic, and Central Asian influences.
+        </p>
+        <p>
+          What makes a wazwan truly special is that the Kashmiri feast can be put together only by a master chef known as a wusta waza. And with more than three dozen dishes, many of which feature mutton (sheep or lamb), having a professional is essential. The wusta waza leads a team of men who tenderize, cut, spice, and blend the meat before cooking the dishes in large copper cauldrons. Hardwoods from fruit trees provide fuel for the fires that burn beneath the pots, which rest upon low bricks.
+        </p>
+        <p>
+          While the meat and sauces bubble away, family members (men are separated from women) gather in groups of four around wide, tin-coated copper plates called tramis. Using long ladles, wazas, or sometimes male family members, serve dish after dish onto these large platters. From ghee-fried ribs (tabak maz) to minced mutton balls (trista) to lamb shoulder cooked in milk and spices (aab goshT), the feast has no shortage of flavor. A particular favorite is the Kashmiri specialty rogan josh, a thick red stew of braised mutton and gravy made with spices such as ginger, garlic, fiery red chiles, cloves, and cinnamon.
+        </p>
+        <p>
+          The meal is served upon heaps of rice and accompanied by yogurt garnished with Kashmiri saffron and pickles. It ends with kahwa, a traditional, aromatic Kashmiri tea flavored with cardamom and topped with almonds. In fact, the feast is so opulent that each platter customarily gets piled with 8 to 13 pounds of meat and can take more than two hours to eat.
+        </p>
+      </div>
+      <div className="buttons">
+        <button className="contact-us">Contact Us</button>
+        <button className="view-menu">View Menu</button>
+      </div>
+    </div>
+
+    
+<div className='online-delivery mt-5'>
+  <div className='text-place'>
+    <h1>Open<font> 7 days</font></h1>
+    <svg aria-hidden="true" className='svg-clock' viewBox='0 0 448 512' xmlns='http://www.w3.org/2000/svg'>
+                <path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path>
+              </svg>
+              12:00PM - 11:00PM
+              <br />
+
+              <button>Get online delivery</button>
+              <span>or call us +966 55 512 7624, +966 53 271 8265</span>
+  </div>
+</div>
+
+<div className='delivery-area-des mt-5'>
+  <h1>delivery <font> Area</font></h1>
+  <p>We are available for delivery of our Kashmiri wazwan in <b>Riyadh</b> region of Saudi Arabia. For delivery in other regions, <br /> please contact us directly.</p>
+</div>
+</>
+  )
+}
+
+export default About
