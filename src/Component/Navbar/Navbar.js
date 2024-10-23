@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+  const [showModal, setShowModal] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
+  const toggleModal = () => {
+    setShowModal(!showModal); // Toggle modal visibility
+  };
 
   const getBackgroundImage = () => {
     switch (location.pathname) {
@@ -59,7 +63,8 @@ const Navbar = () => {
       className='navbar-up'
       style={{
         backgroundImage: `url(${getBackgroundImage()})`,
-        minHeight: isHomePage ? '100vh' : '60vh' }}>
+        minHeight: isHomePage ? '100vh' : '60vh'
+      }}>
       <div className='nav-smaller'>
         <div className='navbar-small container-fluid'>
           <ul className="d-flex flex-wrap">
@@ -68,44 +73,53 @@ const Navbar = () => {
                 <path d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path>
               </svg>
 
-              Mohali, India</li>
+              Chandigarh, India<br /> Mohali, India </li>
             <li className="d-flex align-items-center">
               <svg aria-hidden="true" className='svg-icons' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
                 <path d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z"></path>
               </svg>
-              +9876543210</li>
+              +91 884-7026594 <br /> +91 73888 48178 </li>
 
             <li className="d-flex align-items-center">
               <svg aria-hidden="true" className='svg-icons' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
                 <path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"></path>
               </svg>
-              info@wazwan.com</li>
+              contact.wazwan@gmail.com</li>
 
             <li>
               <div className='d-flex align-items-center contact-icons mx-5'>
+              <a href="https://www.facebook.com/people/Wazwan-Legacy/61556216672676/?mibextid=LQQJ4d&rdid=Hol2WGch2Qzv04WD&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F2wZwvR22bwzE7a1M%2F%3Fmibextid%3DLQQJ4d" target="_blank" rel="noopener noreferrer">
                 <svg aria-hidden="true" className='svg-icons' viewBox='0 0 320 512' xmlns='http://www.w3.org/2000/svg'>
                   <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
                 </svg>
-
+                </a>
+                 
+                <a href="https://www.instagram.com/wazwan_legacy/" target="_blank" rel="noopener noreferrer">
                 <svg aria-hidden="true" className='svg-icons' viewBox='0 0 448 512' xmlns='http://www.w3.org/2000/svg'>
                   <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
                 </svg>
-
-                <svg aria-hidden="true" className='svg-icons' viewBox='0 0 496 512' xmlns='http://www.w3.org/2000/svg'>
-                  <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm169.5 338.9c-3.5 8.1-18.1 14-44.8 18.2-1.4 1.9-2.5 9.8-4.3 15.9-1.1 3.7-3.7 5.9-8.1 5.9h-.2c-6.2 0-12.8-2.9-25.8-2.9-17.6 0-23.7 4-37.4 13.7-14.5 10.3-28.4 19.1-49.2 18.2-21 1.6-38.6-11.2-48.5-18.2-13.8-9.7-19.8-13.7-37.4-13.7-12.5 0-20.4 3.1-25.8 3.1-5.4 0-7.5-3.3-8.3-6-1.8-6.1-2.9-14.1-4.3-16-13.8-2.1-44.8-7.5-45.5-21.4-.2-3.6 2.3-6.8 5.9-7.4 46.3-7.6 67.1-55.1 68-57.1 0-.1.1-.2.2-.3 2.5-5 3-9.2 1.6-12.5-3.4-7.9-17.9-10.7-24-13.2-15.8-6.2-18-13.4-17-18.3 1.6-8.5 14.4-13.8 21.9-10.3 5.9 2.8 11.2 4.2 15.7 4.2 3.3 0 5.5-.8 6.6-1.4-1.4-23.9-4.7-58 3.8-77.1C183.1 100 230.7 96 244.7 96c.6 0 6.1-.1 6.7-.1 34.7 0 68 17.8 84.3 54.3 8.5 19.1 5.2 53.1 3.8 77.1 1.1.6 2.9 1.3 5.7 1.4 4.3-.2 9.2-1.6 14.7-4.2 4-1.9 9.6-1.6 13.6 0 6.3 2.3 10.3 6.8 10.4 11.9.1 6.5-5.7 12.1-17.2 16.6-1.4.6-3.1 1.1-4.9 1.7-6.5 2.1-16.4 5.2-19 11.5-1.4 3.3-.8 7.5 1.6 12.5.1.1.1.2.2.3.9 2 21.7 49.5 68 57.1 4 1 7.1 5.5 4.9 10.8z"></path>
+                </a>
+                 
+                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                <svg aria-hidden="true" className='svg-icons' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path d="M23.954 4.569c-.885.39-1.83.654-2.825.775a4.958 4.958 0 0 0 2.163-2.724 9.865 9.865 0 0 1-3.127 1.184 4.936 4.936 0 0 0-8.401 4.49A14.01 14.01 0 0 1 1.671 3.149 4.933 4.933 0 0 0 3.192 9.72a4.936 4.936 0 0 1-2.23-.616c-.054 2.282 1.582 4.415 3.946 4.89a4.935 4.935 0 0 1-2.224.085c.627 1.956 2.444 3.379 4.6 3.419a9.874 9.874 0 0 1-6.102 2.104c-.394 0-.779-.023-1.158-.067a13.933 13.933 0 0 0 7.548 2.209c9.057 0 14.01-7.502 14.01-14.01 0-.213-.005-.426-.014-.637a9.936 9.936 0 0 0 2.455-2.549z" />
                 </svg>
+                </a>
 
-                <svg aria-hidden="true" className='svg-icons' viewBox='0 0 448 512' xmlns='http://www.w3.org/2000/svg'>
-                  <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"></path>
+                <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
+                <svg aria-hidden="true" className='svg-icons' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path d="M17.472 14.382c-.297-.148-1.76-.867-2.033-.964-.273-.099-.472-.148-.672.148-.198.297-.768.964-.94 1.163-.173.198-.347.223-.644.074-.297-.148-1.255-.462-2.39-1.474-.883-.79-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.132.297-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.521-.074-.148-.672-1.614-.923-2.22-.242-.581-.487-.502-.672-.512l-.573-.012c-.198 0-.52.074-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.098 3.202 5.083 4.487.711.307 1.264.491 1.696.629.713.226 1.362.194 1.875.118.572-.085 1.76-.719 2.006-1.413.247-.694.247-1.29.173-1.413-.074-.123-.273-.198-.572-.347zM11.997 2c5.514 0 9.997 4.483 9.997 9.997a9.948 9.948 0 0 1-1.608 5.402l1.127 4.101-4.202-1.104A9.942 9.942 0 0 1 12 22c-5.514 0-9.997-4.483-9.997-9.997S6.483 2 11.997 2z" />
                 </svg>
+                </a>
               </div>
 
             </li>
           </ul>
         </div>
-        <div className='navbar-main text-center'>
+        <div className={`navbar-main text-center ${showModal ? 'modal-open' : ''}`}>
           <div className='main-logo'>
-            <img src='../images/wazwan-logo.jpg' className='main-logo-here' alt='Logo' />
+            <Link to={'/'}>
+            <img src='../images/wazwan-logo.jpg' className='main-logo-here' alt='Logo' /> </Link>
           </div>
           <div className='navbar-components mt-3 mx-5'>
             <ul className="d-flex list-unstyled">
@@ -117,8 +131,44 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="btn-order">
-            <button id='btn-online'>Order Online</button>
+            <button id='btn-online' onClick={toggleModal}>Order Online</button>
           </div>
+          {/* Modal for ordering online */}
+          {/* Modal for ordering online */}
+          {showModal && (
+            <div className="modal-overlay">
+              <div className="modal-content">
+                <h1 className="modal-header">Place Your Online Order</h1> {/* Header title with class */}
+                <h2 className="modal-header">Order Online</h2>
+                <div className="modal-body">
+                  {/* Chandigarh Section */}
+                  <div className="location">
+                    <h3 className='model-text'>Chandigarh</h3>
+                    <p className='model-text'>Order online from:</p>
+                    <div className="images">
+                      <img src="../images/zomato-logo.png" alt="Zomato - Chandigarh" />
+                      <img src="../images/swiggy-logo.png" alt="Swiggy - Chandigarh" />
+                      <img src="../images/fatafat.jpg" alt="Fatafat - Chandigarh" />
+                    </div>
+                  </div>
+                  {/* Vertical Divider */}
+                  <div className="vertical-divider"></div>
+
+                  {/* Mohali Section */}
+                  <div className="location">
+                    <h3 className='model-text'>Mohali</h3>
+                    <p className='model-text'>Order online from:</p>
+                    <div className="images">
+                      <img src="../images/zomato-logo.png" alt="Zomato - Mohali" />
+                      <img src="../images/swiggy-logo.png" alt="Swiggy - Mohali" />
+                      <img src="../images/fatafat.jpg" alt="Fatafat - Mohali" />
+                    </div>
+                  </div>
+                </div>
+                <button onClick={toggleModal} className="close-btn">Close</button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
@@ -132,7 +182,9 @@ const Navbar = () => {
       )}
       {isHomePage && (
         <div className='btn-menu'>
+          <Link to={'/our-menus'}>
           <button>View Menus</button>
+          </Link>
         </div>
       )}
     </div>

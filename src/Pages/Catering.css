@@ -61,9 +61,6 @@
     position: relative;
     transform: translateX(0);
 }
-.moved {
-    transform: translateX(-100px); /* Adjust this value based on how far you want it to move */
-  }
 
 .side-text1 h1 {
     font-size: 28px;
@@ -114,8 +111,16 @@ font {
   }
 
   
-
-
-  .move-right {
-    transform: translateX(100px); /* Move right by 100px */
+  .side-text1 {
+    will-change: transform;
+    /* Remove any existing transition properties as they'll be handled in JS */
+  }
+  
+  /* Optional: Add some perspective for a more dramatic effect */
+  .container-another1,
+  .container1 {
+    perspective: 1000px;
+  }
+  * {
+    backface-visibility: hidden;
   }

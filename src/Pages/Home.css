@@ -3,7 +3,6 @@
 .container {
     display: flex;
     align-items: center;
-    gap: 50px;
     padding: 20px;
     padding-left: 13%;
 }
@@ -31,9 +30,6 @@
     position: relative;
     transform: translateX(0);
 }
-.moved {
-    transform: translateX(-100px); /* Adjust this value based on how far you want it to move */
-  }
 
 .side-text h1 {
     font-size: 28px;
@@ -103,9 +99,6 @@ font {
     border-radius: 10px;
   }
 
-  .move-right {
-    transform: translateX(100px); /* Move right by 100px */
-  }
 
 
   
@@ -225,7 +218,7 @@ font {
 
 
 .online-delivery {
-    background-image: url('/public/images/home-section1.webp');
+    background-image: url('/public/images/background_img.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -312,6 +305,30 @@ font {
     font-size: 1.2rem;
     flex-wrap: wrap;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
+
+  .side-text {
+    transform: translateX(0);
+    will-change: transform;
+    opacity: 1;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  }
+  
+  .side-text.move-right {
+    transform: translateX(0);
+  }
+  
+  /* Add smooth scrolling to the whole page */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Optimize performance for animations */
+  * {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
   }
   
   

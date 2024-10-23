@@ -19,6 +19,7 @@ function App() {
         <Route path="/catering" element={<Catering />} />
         <Route path="/contact" element={<ContactUs />} /> 
         <Route path="/our-menus" element={<OurMenus />} />
+        <Route path="/menu/*" element={<OurMenus />} />
         <Route path="/menu-item/:id" element={<MenuItem />} />
       </Routes>
       <Footer />

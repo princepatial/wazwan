@@ -1,24 +1,23 @@
 import React,{useState,useEffect,useCallback} from 'react'
 import './About.css'
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const popularItems = [
-  { id: 1, title: "Rice and breads", subtitle: "Chicken Biryani", image: "../images/four-collge2.png" },
-  { id: 2, title: "Kids Menu", subtitle: "Chicken Nuggets", image: "../images/fou-collage4.webp" },
-  { id: 3, title: "Breakfast", subtitle: "Harissa", image: "../images/four-collge2.png" },
-  { id: 4, title: "Kids Menu", subtitle: "Chicken Nuggets", image: "../images/fou-collage4.webp" },
-  { id: 5, title: "Beverages", subtitle: "Noon Chai Kashmiri", image: "../images/fou-collage4.webp" },
-  { id: 6, title: "Kids Menu", subtitle: "Chicken Nuggets", image: "../images/fou-collage4.webp" },
-  { id: 7, title: "Desserts", subtitle: "Phirni", image: "../images/four-collge2.png" },
-  { id: 8, title: "Appetizers", subtitle: "Kashmiri Kebabs", image: "./images/four-collge2.png" },
-  { id: 9, title: "Main Course", subtitle: "Rogan Josh", image: "../images/four-collge2.png" },
-  { id: 10, title: "Sides", subtitle: "Kashmiri Pulao", image: "../images/four-collge2.png" },
+  { id: 1, title: "Kids Menu",  image: "../images/kids_menu.jpg", link: "/menu/kids-menu" },
+  { id: 2, title: "Breakfast", image: "../images/breakfast.jpg", link: "/menu/breakfast" },
+  { id: 3, title: "Beverages",  image: "../images/beverages.png", link: "/menu/beverages" },
+  { id: 4, title: "Starters",  image: "../images/staters.jpg", link: "/menu/starters" },
+  { id: 5, title: "Indian-delicacies",  image: "./images/indian_del.jpg", link: "/menu/indian-delicacies" },
+  { id: 6, title: "Main Course",  image: "../images/home-section1.webp", link: "/menu/main-course" },
+  { id: 7, title: "Vegetarian Specialties", image: "../images/vegetrian.jpg", link: "/menu/vegetarian-specialties" },
 ];
 
 const About = ({autoSlideInterval = 5000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 4;
   const gap = 20;
+  const navigate = useNavigate();
 
 
   const nextSlide = useCallback(() => {
@@ -41,6 +40,11 @@ const About = ({autoSlideInterval = 5000 }) => {
     ...popularItems.slice(0, itemsPerPage)
   ];
 
+  const handleLinkClick = (e, link) => {
+    e.preventDefault();
+    navigate(link);
+};
+
 
 
   return (
@@ -62,54 +66,61 @@ const About = ({autoSlideInterval = 5000 }) => {
           <button className="menu-btn">View Menu</button>
         </div>
       </div>
-    </div>
+      </div>
 
 
 
-<div className='online-delivery1 mt-5'> 
+    <div className='online-delivery1 mt-5'>
+            <div className="popular-items1">
+                <h1>Our Popular <span className="highlight">Items</span></h1>
+                <p>"Wazwan's, each dish is a masterpiece, carrying the rich heritage of Kashmir"</p>
 
-<div className="popular-items1">
-        <h1>Our Popular <span className="highlight">Items</span></h1>
-        <p>"Wazwan's, each dish is a masterpiece, carrying the rich heritage of Kashmir"</p>
-
-        <div className="menus-page" style={{ position: 'relative', padding: '0 40px', overflow: 'hidden' }}>
-          <div style={{ 
-            display: 'flex', 
-            gap: `${gap}px`, // Add gap between items
-            transition: 'transform 0.5s ease-in-out',
-            transform: `translateX(calc(-${(currentIndex + itemsPerPage) * (100 / itemsPerPage)}% - ${currentIndex * gap}px))`,
-          }}>
-            {extendedItems.map((item, index) => (
-              <div key={`${item.id}-${index}`} className="menu-item" style={{ 
-                flex: `0 0 calc(${100 / itemsPerPage}% - ${gap * (itemsPerPage - 1) / itemsPerPage}px)` 
-              }}>
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  style={{ 
-                    width: '100%', 
-                    height: '300px', // Increased height
-                    objectFit: 'cover' 
-                  }} 
-                />
-                <div className="menu-item-info">
-                  <h3>{item.title}</h3>
-                  <p>{item.subtitle}</p>
+                <div className="menus-page" style={{ position: 'relative', padding: '0 40px', overflow: 'hidden' }}>
+                    <div style={{
+                        display: 'flex',
+                        gap: `${gap}px`,
+                        transition: 'transform 0.5s ease-in-out',
+                        transform: `translateX(calc(-${(currentIndex + itemsPerPage) * (100 / itemsPerPage)}% - ${currentIndex * gap}px))`,
+                    }}>
+                        {extendedItems.map((item, index) => (
+                            <Link
+                                to={item.link}
+                                key={`${item.id}-${index}`}
+                                className="menu-item"
+                                onClick={(e) => handleLinkClick(e, item.link)}
+                                style={{
+                                    flex: `0 0 calc(${100 / itemsPerPage}% - ${gap * (itemsPerPage - 1) / itemsPerPage}px)`
+                                }}
+                            >
+                                <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    style={{
+                                        width: '100%',
+                                        height: '300px',
+                                        objectFit: 'cover'
+                                    }}
+                                />
+                                <div className="menu-item-info">
+                                    <h3>{item.title}</h3>
+                                    <p>{item.subtitle}</p>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                    <button onClick={prevSlide} className="nav-button prev" aria-label="Previous item">
+                        <ChevronLeft size={24} />
+                    </button>
+                    <button onClick={nextSlide} className="nav-button next" aria-label="Next item">
+                        <ChevronRight size={24} />
+                    </button>
                 </div>
-              </div>
-            ))}
-          </div>
-          
-          <button onClick={prevSlide} className="nav-button prev" aria-label="Previous item">
-            <ChevronLeft size={24} />
-          </button>
-          <button onClick={nextSlide} className="nav-button next" aria-label="Next item">
-            <ChevronRight size={24} />
-          </button>
-        </div>
+
+
 
         <div className="btn-menu-order">
-          <button>View Menu</button>
+          <Link to={'/our-menus'}>
+          <button>View Menu</button> </Link>
         </div>
       </div>
 
@@ -152,14 +163,15 @@ const About = ({autoSlideInterval = 5000 }) => {
               12:00PM - 11:00PM
               <br />
 
-              <button>Get online delivery</button>
-              <span>or call us +966 55 512 7624, +966 53 271 8265</span>
+<Link to={'/our-menus'}>
+              <button>Get online delivery</button></Link>
+              <span>or call us +91 884-7026594, +91 73888 48178</span>
   </div>
 </div>
 
 <div className='delivery-area-des mt-5'>
   <h1>delivery <font> Area</font></h1>
-  <p>We are available for delivery of our Kashmiri wazwan in <b>Riyadh</b> region of Saudi Arabia. For delivery in other regions, <br /> please contact us directly.</p>
+  <p>We are available for delivery of our Kashmiri wazwan in <b>Chandigarh and Mohali</b> region in India. For delivery in other regions, <br /> please contact us directly.</p>
 </div>
 </>
   )

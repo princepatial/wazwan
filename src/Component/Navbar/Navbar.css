@@ -107,6 +107,7 @@ body {
     display: flex; /* Use Flexbox for horizontal list */
     list-style-type: none; /* Remove default list styling */
     padding-left: 10px;
+    position: relative;
   
   }
   
@@ -114,6 +115,7 @@ body {
     font-family: "Amita", serif;
     color: white;
     font-weight: bold;
+    position: relative; 
   }
 
   .navbar-main a {
@@ -146,7 +148,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-   
     z-index: 1001;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
    
@@ -212,3 +213,135 @@ body {
   .btn-menu button:hover {
     background-color: #9da5ad; /* Darken the button color on hover */
   }
+
+
+
+  .model {
+    position: absolute; /* or absolute, depending on your layout */
+   
+  }
+  .modal-open {
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Modal Overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1002; /* Ensure this is higher than other elements on the page */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: white; /* White background for the modal itself */
+    padding: 30px;
+    border-radius: 10px;
+    width: 600px;
+    height: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding a shadow for depth */
+    animation: slide-down 0.4s ease; /* Smooth appearance animation */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .modal-header {
+    font-size: 24px; /* Larger font size for visibility */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px; /* Space between header and content */
+    text-transform: uppercase; /* Optional: makes the header uppercase */
+    justify-content: center;
+  }
+  .model-text{
+    color: #333;
+  }
+  
+  .vertical-divider {
+    width: 1px; /* Narrow width for the line */
+    height: 150px; /* Increase height for visibility */
+    background-color: rgba(0, 0, 0, 0.2); /* Light black color */
+    margin: 0 20px; /* Add space between sections */
+  }
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .modal-body {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .location {
+    width: 45%;
+  }
+
+  .images {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .images img {
+    width: 60px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  /* Close Button */
+  .close-btn {
+    background-color: #ff4d4d; /* Red button for closing */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .close-btn:hover {
+    background-color: #cc0000; /* Darken on hover */
+  }
+  
+  /* Animation for modal appearance */
+  @keyframes slide-down {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .navbar-components li a::after {
+    content: ''; /* Create the pseudo-element */
+    position: absolute; /* Position it absolutely */
+    left: 0; /* Align to the left */
+    bottom: 0; /* Align to the bottom */
+    height: 2px; /* Height of the underline */
+    width: 100%; /* Full width */
+    background-color:coral; /* Color of the underline */
+    transform: scaleX(0); /* Start with no width */
+    transition: transform 0.3s ease; /* Smooth transition for the underline */
+}
+
+.navbar-components li a:hover::after {
+    transform: scaleX(1); /* Expand the underline on hover */
+}
+ 

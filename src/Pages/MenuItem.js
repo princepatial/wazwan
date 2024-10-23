@@ -1,11 +1,11 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './MenuItem.css';
-import { Breakfast, Beverages } from '../Pages/MenuData';
+import { Breakfast, Beverages,Staters, wazwan, indian, veg,kids } from '../Pages/MenuData';
 
 const MenuItem = () => {
     const { id } = useParams();
-    const allItems = [...Breakfast, ...Beverages];
+    const allItems = [...Breakfast, ...Beverages,...Staters,...wazwan,...indian,...veg,...kids];
     const item = allItems.find(item => item.id === parseInt(id));
 
     if (!item) {

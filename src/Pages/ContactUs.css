@@ -144,6 +144,21 @@ font {
     color: #e58e26;
 }
 
-.moved {
-    transform: translateX(-100px); /* Adjust this value based on how far you want it to move */
-  }
+
+/* Add these to your existing CSS */
+.contact-form {
+    will-change: transform;
+}
+
+.contact-container {
+    perspective: 1000px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
